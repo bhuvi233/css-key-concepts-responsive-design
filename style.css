@@ -4,6 +4,15 @@
     --light: #E7ECEF;
     --dark: #272932;
     --camel: #D8A47F;
+    --antiquewhite: antiquewhite;
+    --title-font-desktop: 2.75rem;
+    --small-font-desktop: 1.25rem;
+    --title-font-tablet: 2.50rem;
+    --large-font-tablet: 1.75rem;
+    --medium-font-tablet: 1.5rem;
+    --small-font-tablet: 1rem;
+    --default-large-font: 2.25rem;
+    --default-small-font: 0.75rem;
 }
 
 html {
@@ -11,15 +20,17 @@ html {
 }
 
 body {
+    font-family: 'Courgette', cursive;
     background-color: var(--light);
+    color: #2a2323;
 }
 
 h1 {
-    font-size: 2.25rem;
+    font-size: var(--default-large-font);
 }
 
 p {
-    font-size: 0.75rem;
+    font-size: var(--default-small-font);
 }
 
 .card-container {
@@ -34,12 +45,28 @@ p {
     border: 2px solid var(--teal);
 }
 
-.card p {
+img {
+    width: 250px;
+}
+
+.nav-container {
+    display: flex;
+    background: var(--dark);
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+.nav-container a {
+    text-decoration: none;
+    padding: 20px 20px;
+    color: aliceblue;
+}
+
+.nav-container a.item {
     display: none;
 }
 
-img {
-    width: 250px;
+#cat-ipsum {
+    display: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,7 +77,19 @@ img {
 
     body {
         background-color: var(--dark);
-        color: antiquewhite;
+        color: var(--antiquewhite);
+    }
+
+    .nav-container {
+        background: var(--light);
+    }
+
+    .nav-container a {
+        color: var(--dark);
+    }
+
+    #cat-ipsum {
+        display: block;
     }
 }
 
@@ -59,25 +98,29 @@ img {
         background-color: var(--camel);
     }
 
+    .nav-container a.item {
+        display: block;
+    }
+
+    .nav-container a.icon {
+        display: none;
+    }
+
     h1 {
-        font-size: 2.50rem;
+        font-size: var(--title-font-tablet);
     }
 
     h2 {
-        font-size: 1.75rem
+        font-size: var(--large-font-tablet);
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: var(--medium-font-tablet);
     }
 
     p {
-        font-size: 1rem;
+        font-size: var(--small-font-tablet);
     }  
-
-    .card p {
-        display: block;
-    }
 }
 
 @media only screen and (min-width: 1000px){
@@ -86,18 +129,17 @@ img {
     }
     
     .card {
-        border: 2px solid black ;
+        border: 2px solid var(--dark) ;
     }
 
     h1 {
-        font-size: 2.75rem;
+        font-size: var(--title-font-desktop);
     }
 
     p {
-        font-size: 1.25rem;
+        font-size: var(--small-font-desktop);
     } 
 }
-
 
 
 
