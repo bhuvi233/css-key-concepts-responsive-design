@@ -1,6 +1,6 @@
 :root {
     --coral: #F05D5E;
-    --teal: #0F7173;
+    --teal: #6bb0b1;
     --light: #E7ECEF;
     --dark: #272932;
     --camel: #D8A47F;
@@ -34,8 +34,24 @@ p {
     border: 2px solid var(--teal);
 }
 
+.card p {
+    display: none;
+}
+
 img {
     width: 250px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --teal: #009595;
+        --camel: #94582d;
+    }
+
+    body {
+        background-color: var(--dark);
+        color: antiquewhite;
+    }
 }
 
 @media only screen and (min-width: 700px){
@@ -81,4 +97,7 @@ img {
         font-size: 1.25rem;
     } 
 }
+
+
+
 
